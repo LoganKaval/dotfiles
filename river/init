@@ -16,8 +16,17 @@ riverctl map normal Super C spawn fuzzel
 riverctl map normal Super+Shift X spawn thunar
 riverctl map normal Super V spawn brave
 riverctl map normal Super+Shift V spawn chromeium
+riverctl map normal Super+Shift D spawn cool-retro-term
+riverctl map normal Super Z spawn kitty
+riverctl map normal Super+Shift Z spawn st
 
 
+riverctl map $mode None XF86MonBrightnessUp   spawn 'light -A 5'
+riverctl map $mode None XF86MonBrightnessDown spawn 'light -U 5'
+riverctl map $mode None XF86AudioRaiseVolume  spawn 'amixer set "Master" 10%+'
+riverctl map $mode None XF86AudioLowerVolume  spawn 'amixer set "Master" 10%-'
+riverctl map $mode None XF86AudioMute         spawn 'amixer set "Master" toggle'
+# swaybg -m fill -i /home/larry/wallpapers/Awesome_Gentoo_Wallpaper.png &
 
 # Super+Q to close the focused view
 riverctl map normal Super+Shift C close
@@ -154,16 +163,12 @@ do
 done
 
 # Set background and border color
-riverctl background-color 0x0d3f50
+riverctl background-color 0xof5775
 riverctl border-color-focused 0x93a1a1
 riverctl border-color-unfocused 0x586e75
 
 # Set keyboard repeat rate
 riverctl set-repeat 50 300
-
-# Autostart
-waybar
-xfce4-power-manager
 
 riverctl rule-add -app-id 'float*' -title 'foo' float
 
@@ -174,3 +179,8 @@ riverctl rule-add -app-id "bar" csd
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
 rivertile -view-padding 10 -outer-padding 10 &
+
+# AutoStart
+
+waybar
+xfce4-power-manager
